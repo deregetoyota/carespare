@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derege Muse — Quality Toyota Body Parts</title>
+<meta name="description" content="Quality OEM and aftermarket Toyota body parts. Bumpers, fenders, doors, lights and more for all Toyota models.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">D</span>
+      <span>Derege Muse</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Request Quote</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Quality <span>Toyota Body Parts</span><br>For Every Model</h1>
+    <p>OEM and aftermarket parts for Camry, Corolla, RAV4, Tacoma, and the full Toyota lineup. Trusted by mechanics and DIY owners.</p>
+    <a href="catalog.html" class="btn">Browse Catalog</a>
+    <a href="contact.html" class="btn btn-outline">Request a Quote</a>
+  </div>
+</section>
+
+<section class="features section">
+  <h2 class="section-title">Why Choose Us</h2>
+  <p class="section-subtitle">We specialize exclusively in Toyota body parts</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">✓</div>
+      <h3>OEM &amp; Aftermarket</h3>
+      <p>Genuine Toyota parts and quality aftermarket options to fit any budget.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">★</div>
+      <h3>All Toyota Models</h3>
+      <p>From Camry to Land Cruiser, we stock parts for every Toyota make and year.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Fast Shipping</h3>
+      <p>Most orders ship within 24 hours. Free delivery on orders over $200.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">♦</div>
+      <h3>Quality Guarantee</h3>
+      <p>30-day return policy and warranty on all new parts. Buy with confidence.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="featured">
+  <h2 class="section-title">Featured Parts</h2>
+  <p class="section-subtitle">Popular items in our catalog</p>
+  <div class="product-grid" id="featured-grid"></div>
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="catalog.html" class="btn">View Full Catalog</a>
+  </div>
+</section>
+
+<section class="features section" id="about">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <h2 class="section-title">About Derege Muse</h2>
+    <p style="color: var(--gray); font-size: 1.05rem; margin-bottom: 1rem;">
+      For over a decade, we've been the go-to source for Toyota body parts.
+      We carry everything from front bumpers and fenders to taillights and quarter panels —
+      all backed by our quality guarantee.
+    </p>
+    <p style="color: var(--gray); font-size: 1.05rem;">
+      Whether you're a body shop, a mechanic, or restoring your own Toyota,
+      our knowledgeable team will help you find the exact part you need.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="logo" style="margin-bottom:1rem;">
+        <span class="logo-mark">D</span>
+        <span>Derege Muse</span>
+      </div>
+      <p>Your trusted source for quality Toyota body parts. Serving customers nationwide since 2014.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="catalog.html">All Parts</a></li>
+        <li><a href="catalog.html?category=Bumpers">Bumpers</a></li>
+        <li><a href="catalog.html?category=Lights">Lights</a></li>
+        <li><a href="catalog.html?category=Doors">Doors</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>(555) 123-4567</li>
+        <li>info@deregemuse.com</li>
+        <li>Mon-Fri 8am-6pm</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Derege Muse. All rights reserved. Not affiliated with Toyota Motor Corporation.
+  </div>
+</footer>
+
+<script src="data/products.js"></script>
+<script>
+  // Render featured products (first 6)
+  const grid = document.getElementById('featured-grid');
+  PRODUCTS.slice(0, 6).forEach(p => {
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="product-card">
+        <img class="product-img" src="${p.img}" alt="${p.name}" loading="lazy">
+        <div class="product-body">
+          <span class="product-tag">${p.category}</span>
+          <div class="product-name">${p.name}</div>
+          <div class="product-meta">${p.model} • ${p.year}</div>
+          <div class="product-condition">${p.condition}</div>
+          <div class="product-footer">
+            <span class="product-price">$${p.price}</span>
+            <span class="product-sku">${p.sku}</span>
+          </div>
+        </div>
+      </div>
+    `);
+  });
+</script>
+
+</body>
+</html>

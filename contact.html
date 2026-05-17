@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Derege Muse</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">D</span>
+      <span>Derege Muse</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Request Quote</a>
+  </nav>
+</header>
+
+<section class="page-header">
+  <h1>Contact Us</h1>
+  <p>Get a quote or ask about a specific part</p>
+</section>
+
+<section class="section">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p style="color: var(--gray); margin-bottom: 2rem;">
+        Have a question about a part, need a custom quote, or looking for something not in our catalog?
+        We typically respond within 2 business hours.
+      </p>
+
+      <div class="contact-item">
+        <div class="contact-icon">☎</div>
+        <div>
+          <strong>Phone</strong>
+          <span>(555) 123-4567</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">✉</div>
+        <div>
+          <strong>Email</strong>
+          <span>info@deregemuse.com</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">⌖</div>
+        <div>
+          <strong>Address</strong>
+          <span>123 Auto Parts Way<br>Springfield, IL 62701</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">◷</div>
+        <div>
+          <strong>Hours</strong>
+          <span>Mon–Fri: 8am – 6pm<br>Sat: 9am – 3pm<br>Sun: Closed</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Request a Quote</h2>
+      <p style="color: var(--gray); margin-bottom: 1.5rem;">Tell us what you need and we'll get back with pricing and availability.</p>
+
+      <div class="form-success" id="success">
+        Thanks! Your request has been received. We'll be in touch shortly.
+      </div>
+
+      <form id="quote-form">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="vehicle-model">Toyota Model *</label>
+          <select id="vehicle-model" name="vehicle-model" required>
+            <option value="">Select your Toyota model</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="year">Vehicle Year</label>
+          <input type="text" id="year" name="year" placeholder="e.g., 2020">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Part Needed / Message *</label>
+          <textarea id="message" name="message" placeholder="Describe the part you need (e.g., front bumper for 2020 Camry, driver-side fender, etc.)" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="logo" style="margin-bottom:1rem;">
+        <span class="logo-mark">D</span>
+        <span>Derege Muse</span>
+      </div>
+      <p>Your trusted source for quality Toyota body parts.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="catalog.html">All Parts</a></li>
+        <li><a href="catalog.html?category=Bumpers">Bumpers</a></li>
+        <li><a href="catalog.html?category=Lights">Lights</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>(555) 123-4567</li>
+        <li>info@deregemuse.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Derege Muse. All rights reserved.
+  </div>
+</footer>
+
+<script src="data/products.js"></script>
+<script>
+  // Populate model dropdown
+  const modelSel = document.getElementById('vehicle-model');
+  MODELS.forEach(m => {
+    modelSel.insertAdjacentHTML('beforeend', `<option value="${m}">${m}</option>`);
+  });
+
+  // Demo form submission — no backend, just shows success message
+  const form = document.getElementById('quote-form');
+  const success = document.getElementById('success');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    success.style.display = 'block';
+    form.reset();
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => { success.style.display = 'none'; }, 6000);
+  });
+</script>
+
+</body>
+</html>
